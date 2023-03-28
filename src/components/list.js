@@ -1,21 +1,21 @@
 import React from 'react'
 
-export default function list({info, upcoming}) {
-  return (
-    <ul>
-          {iterate(info, upcoming)}
-      </ul>
-  );
+export default function list({ info, upcoming }) {
+    return (
+        <ul>
+            {iterate(info, upcoming)}
+        </ul>
+    );
 }
 
-function iterate(data, flag){
+function iterate(data, flag) {
     if (!data) return;
-    const bgColor = flag ? { backgroundColor : "#ffe66d"} : {};
+    const bgColor = flag ? { backgroundColor: "#ffe66d" } : {};
     return (
         <>
             {
-                data.map( (person, index) => {
-                   
+                data.map((person, index) => {
+
                     return (
                         <li key={index}>
                             <div className="flex" style={bgColor}>
@@ -34,10 +34,10 @@ function iterate(data, flag){
 }
 
 // how old the person is
-function Old(personAge){
+function Old(personAge) {
     let year = new Date(personAge).getFullYear();
     let currentYear = new Date().getFullYear();
-    
+
     let age = currentYear - year;
-   return age;
+    return age;
 }
